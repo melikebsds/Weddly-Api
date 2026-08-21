@@ -12,4 +12,10 @@ WORKDIR /app
 COPY --from=build /app .
 
 ENV ASPNETCORE_ENVIRONMENT=Production
+# appsettings.json değişikliklerini izlemek için açılan FileSystemWatcher'lar
+# container'ın inotify limitini (varsayılan 128) tüketip "IOException: configured
+# user limit on inotify instances" hatasıyla çökmeye sebep olabiliyor.
+# Config zaten deploy'da sabit; hot-reload'a gerek yok.
+ENV DOTNET_hostBuilder__reloadConfigOnChange=false
+
 ENTRYPOINT ["dotnet", "WeddingPlanner.Api.dll"]

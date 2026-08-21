@@ -20,6 +20,10 @@ public class CreateTaskRequest
 
     public Guid? AssignedUserId { get; set; }
 
+    public ResponsibleParty ResponsibleParty { get; set; } = ResponsibleParty.Unspecified;
+
+    public string? ProductUrl { get; set; }
+
     public WeddingTaskStatus Status { get; set; } = WeddingTaskStatus.ToBuy;
 }
 
@@ -39,6 +43,10 @@ public class UpdateTaskRequest
     public decimal? ActualPrice { get; set; }
 
     public Guid? AssignedUserId { get; set; }
+
+    public ResponsibleParty ResponsibleParty { get; set; }
+
+    public string? ProductUrl { get; set; }
 
     public WeddingTaskStatus Status { get; set; }
 }

@@ -22,6 +22,10 @@ public class TaskResponse
 
     public Guid? AssignedUserId { get; set; }
 
+    public ResponsibleParty ResponsibleParty { get; set; }
+
+    public string? ProductUrl { get; set; }
+
     public WeddingTaskStatus Status { get; set; }
 
     public DateTime? CompletedAt { get; set; }

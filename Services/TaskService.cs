@@ -53,6 +53,8 @@ public class TaskService : ITaskService
             EstimatedPrice = request.EstimatedPrice,
             ActualPrice = request.ActualPrice,
             AssignedUserId = request.AssignedUserId,
+            ResponsibleParty = request.ResponsibleParty,
+            ProductUrl = request.ProductUrl,
             Status = request.Status,
             CompletedAt = request.Status == WeddingTaskStatus.Bought ? now : null,
             CreatedAt = now,
@@ -84,6 +86,8 @@ public class TaskService : ITaskService
         task.EstimatedPrice = request.EstimatedPrice;
         task.ActualPrice = request.ActualPrice;
         task.AssignedUserId = request.AssignedUserId;
+        task.ResponsibleParty = request.ResponsibleParty;
+        task.ProductUrl = request.ProductUrl;
 
         if (task.Status != request.Status)
         {
@@ -142,6 +146,8 @@ public class TaskService : ITaskService
         EstimatedPrice = task.EstimatedPrice,
         ActualPrice = task.ActualPrice,
         AssignedUserId = task.AssignedUserId,
+        ResponsibleParty = task.ResponsibleParty,
+        ProductUrl = task.ProductUrl,
         Status = task.Status,
         CompletedAt = task.CompletedAt,
         CreatedAt = task.CreatedAt,

@@ -20,6 +20,10 @@ public class WeddingTask
 
     public Guid? AssignedUserId { get; set; }
 
+    public ResponsibleParty ResponsibleParty { get; set; } = ResponsibleParty.Unspecified;
+
+    public string? ProductUrl { get; set; }
+
     public WeddingTaskStatus Status { get; set; } = WeddingTaskStatus.ToBuy;
 
     public DateTime? CompletedAt { get; set; }

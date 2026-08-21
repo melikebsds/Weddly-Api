@@ -52,8 +52,8 @@ public class TaskService : ITaskService
             EstimatedPrice = request.EstimatedPrice,
             ActualPrice = request.ActualPrice,
             AssignedUserId = request.AssignedUserId,
-            IsCompleted = request.IsCompleted,
-            CompletedAt = request.IsCompleted ? now : null,
+            Status = request.Status,
+            CompletedAt = request.Status == WeddingTaskStatus.Bought ? now : null,
             CreatedAt = now,
         };
 
@@ -83,11 +83,11 @@ public class TaskService : ITaskService
         task.ActualPrice = request.ActualPrice;
         task.AssignedUserId = request.AssignedUserId;
 
-        if (task.IsCompleted != request.IsCompleted)
+        if (task.Status != request.Status)
         {
-            task.CompletedAt = request.IsCompleted ? now : null;
+            task.CompletedAt = request.Status == WeddingTaskStatus.Bought ? now : null;
         }
-        task.IsCompleted = request.IsCompleted;
+        task.Status = request.Status;
         task.UpdatedAt = now;
 
         await _db.SaveChangesAsync();
@@ -104,18 +104,18 @@ public class TaskService : ITaskService
         await _db.SaveChangesAsync();
     }
 
-    public async Task<TaskResponse> SetCompletedAsync(Guid userId, Guid taskId, bool isCompleted)
+    public async Task<TaskResponse> SetStatusAsync(Guid userId, Guid taskId, WeddingTaskStatus status)
     {
         var task = await FindTaskOrThrow(taskId);
         await _membershipGuard.EnsureMemberAsync(userId, task.WeddingSpaceId);
 
         var now = DateTime.UtcNow;
 
-        if (task.IsCompleted != isCompleted)
+        if (task.Status != status)
         {
-            task.CompletedAt = isCompleted ? now : null;
+            task.CompletedAt = status == WeddingTaskStatus.Bought ? now : null;
         }
-        task.IsCompleted = isCompleted;
+        task.Status = status;
         task.UpdatedAt = now;
 
         await _db.SaveChangesAsync();
@@ -139,7 +139,7 @@ public class TaskService : ITaskService
         EstimatedPrice = task.EstimatedPrice,
         ActualPrice = task.ActualPrice,
         AssignedUserId = task.AssignedUserId,
-        IsCompleted = task.IsCompleted,
+        Status = task.Status,
         CompletedAt = task.CompletedAt,
         CreatedAt = task.CreatedAt,
         UpdatedAt = task.UpdatedAt,

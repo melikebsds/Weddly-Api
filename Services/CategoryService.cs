@@ -87,7 +87,8 @@ public class CategoryService : ICategoryService
         Description = category.Description,
         Order = category.Order,
         CreatedAt = category.CreatedAt,
-        TotalTaskCount = category.Tasks.Count,
-        CompletedTaskCount = category.Tasks.Count(t => t.IsCompleted),
+        // İhtiyaç Yok işaretlenen görevler hem toplamdan hem tamamlanandan tamamen hariç tutulur.
+        TotalTaskCount = category.Tasks.Count(t => t.Status != WeddingTaskStatus.NotNeeded),
+        CompletedTaskCount = category.Tasks.Count(t => t.Status == WeddingTaskStatus.Bought),
     };
 }

@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using WeddingPlanner.Api.Entities;
 
 namespace WeddingPlanner.Api.DTOs.Tasks;
 
@@ -17,7 +18,7 @@ public class CreateTaskRequest
 
     public Guid? AssignedUserId { get; set; }
 
-    public bool IsCompleted { get; set; }
+    public WeddingTaskStatus Status { get; set; } = WeddingTaskStatus.ToBuy;
 }
 
 public class UpdateTaskRequest
@@ -35,10 +36,10 @@ public class UpdateTaskRequest
 
     public Guid? AssignedUserId { get; set; }
 
-    public bool IsCompleted { get; set; }
+    public WeddingTaskStatus Status { get; set; }
 }
 
-public class CompleteTaskRequest
+public class SetTaskStatusRequest
 {
-    public bool IsCompleted { get; set; } = true;
+    public WeddingTaskStatus Status { get; set; }
 }

@@ -57,11 +57,11 @@ public class TasksController : ControllerBase
         return NoContent();
     }
 
-    [HttpPatch("api/tasks/{id:guid}/complete")]
-    public async Task<ActionResult<TaskResponse>> Complete(Guid id, CompleteTaskRequest request)
+    [HttpPatch("api/tasks/{id:guid}/status")]
+    public async Task<ActionResult<TaskResponse>> SetStatus(Guid id, SetTaskStatusRequest request)
     {
         var userId = CurrentUser.GetUserId(User);
-        var response = await _taskService.SetCompletedAsync(userId, id, request.IsCompleted);
+        var response = await _taskService.SetStatusAsync(userId, id, request.Status);
         return Ok(response);
     }
 }

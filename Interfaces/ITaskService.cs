@@ -1,4 +1,5 @@
 using WeddingPlanner.Api.DTOs.Tasks;
+using WeddingPlanner.Api.Entities;
 
 namespace WeddingPlanner.Api.Interfaces;
 
@@ -14,5 +15,5 @@ public interface ITaskService
 
     Task DeleteAsync(Guid userId, Guid taskId);
 
-    Task<TaskResponse> SetCompletedAsync(Guid userId, Guid taskId, bool isCompleted);
+    Task<TaskResponse> SetStatusAsync(Guid userId, Guid taskId, WeddingTaskStatus status);
 }

@@ -1,3 +1,5 @@
+using WeddingPlanner.Api.Entities;
+
 namespace WeddingPlanner.Api.DTOs.Tasks;
 
 public class TaskResponse
@@ -18,7 +20,7 @@ public class TaskResponse
 
     public Guid? AssignedUserId { get; set; }
 
-    public bool IsCompleted { get; set; }
+    public WeddingTaskStatus Status { get; set; }
 
     public DateTime? CompletedAt { get; set; }
 

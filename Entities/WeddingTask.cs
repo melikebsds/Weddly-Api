@@ -18,7 +18,7 @@ public class WeddingTask
 
     public Guid? AssignedUserId { get; set; }
 
-    public bool IsCompleted { get; set; }
+    public WeddingTaskStatus Status { get; set; } = WeddingTaskStatus.ToBuy;
 
     public DateTime? CompletedAt { get; set; }
 

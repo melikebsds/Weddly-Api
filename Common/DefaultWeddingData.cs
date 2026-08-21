@@ -11,14 +11,16 @@ public static class DefaultWeddingData
     {
         ("Çeyiz", 0),
         ("Ev İhtiyaçları", 1),
-        ("Kız İsteme", 2),
-        ("Söz", 3),
-        ("Nişan", 4),
-        ("Bohça", 5),
-        ("Kına", 6),
-        ("Düğün", 7),
-        ("Balayı", 8),
-        ("Resmi İşlemler", 9),
+        ("Ev Kurulumu", 2),
+        ("Kız İsteme", 3),
+        ("Söz", 4),
+        ("Nişan", 5),
+        ("Bohça", 6),
+        ("Kına", 7),
+        ("Düğün", 8),
+        ("Düğüne 1 Ay Kala", 9),
+        ("Balayı", 10),
+        ("Resmi İşlemler", 11),
     };
 
     public static readonly (string CategoryName, string Title, decimal EstimatedPrice)[] SampleTasks =
@@ -52,6 +54,22 @@ public static class DefaultWeddingData
         ("Ev İhtiyaçları", "Kombi / Şofben", 15000m),
         ("Ev İhtiyaçları", "Mikrodalga Fırın", 4000m),
         ("Ev İhtiyaçları", "Su Sebili", 2500m),
+
+        // Ev Kurulumu
+        ("Ev Kurulumu", "TV Ünitesi", 6000m),
+        ("Ev Kurulumu", "Yemek Masası ve Sandalye Takımı", 15000m),
+        ("Ev Kurulumu", "Orta Sehpa", 3000m),
+        ("Ev Kurulumu", "Gardırop", 12000m),
+        ("Ev Kurulumu", "Komodin", 3000m),
+        ("Ev Kurulumu", "Şifonyer", 7000m),
+        ("Ev Kurulumu", "Ayakkabılık", 2000m),
+        ("Ev Kurulumu", "Dresuar", 5000m),
+        ("Ev Kurulumu", "Halı", 5000m),
+        ("Ev Kurulumu", "Perde ve Tül", 4000m),
+        ("Ev Kurulumu", "Avize", 2500m),
+        ("Ev Kurulumu", "Lambader / Abajur", 1500m),
+        ("Ev Kurulumu", "Ayna / Duvar Dekorasyonu", 1500m),
+        ("Ev Kurulumu", "Dekoratif Objeler / Saksı", 1000m),
 
         // Kız İsteme
         ("Kız İsteme", "Tarih ve Aile Görüşmesi Organizasyonu", 0m),
@@ -114,6 +132,25 @@ public static class DefaultWeddingData
         ("Düğün", "Saç ve Makyaj", 4000m),
         ("Düğün", "Canlı Yayın / Sosyal Medya Paylaşımı", 1000m),
         ("Düğün", "Misafir İkramları", 8000m),
+
+        // Düğüne 1 Ay Kala (Son Kontrol)
+        ("Düğüne 1 Ay Kala", "Gelinlik Son Provası", 0m),
+        ("Düğüne 1 Ay Kala", "Damatlık Son Kontrolü", 0m),
+        ("Düğüne 1 Ay Kala", "Alyansları Teslim Al", 0m),
+        ("Düğüne 1 Ay Kala", "Nikah Belgelerini Kontrol Et", 0m),
+        ("Düğüne 1 Ay Kala", "Davetli Listesini Kesinleştir", 0m),
+        ("Düğüne 1 Ay Kala", "Masa Düzenini Kesinleştir", 0m),
+        ("Düğüne 1 Ay Kala", "Mekanla Son Toplantıyı Yap", 0m),
+        ("Düğüne 1 Ay Kala", "Organizasyon Firmasını Teyit Et", 0m),
+        ("Düğüne 1 Ay Kala", "Fotoğrafçıyı Teyit Et", 0m),
+        ("Düğüne 1 Ay Kala", "DJ / Orkestrayı Teyit Et", 0m),
+        ("Düğüne 1 Ay Kala", "Kuaför Randevusunu Teyit Et", 0m),
+        ("Düğüne 1 Ay Kala", "Makyaj Randevusunu Teyit Et", 0m),
+        ("Düğüne 1 Ay Kala", "Balayı Rezervasyonlarını Kontrol Et", 0m),
+        ("Düğüne 1 Ay Kala", "Uçuşları Kontrol Et", 0m),
+        ("Düğüne 1 Ay Kala", "Otel Rezervasyonunu Kontrol Et", 0m),
+        ("Düğüne 1 Ay Kala", "Düğün Ödemelerini Kontrol Et", 0m),
+        ("Düğüne 1 Ay Kala", "Acil Durum Çantasını Hazırla", 0m),
 
         // Balayı
         ("Balayı", "Uçak Bileti", 15000m),

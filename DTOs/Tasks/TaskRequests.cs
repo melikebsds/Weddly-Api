@@ -24,6 +24,8 @@ public class CreateTaskRequest
 
     public string? ProductUrl { get; set; }
 
+    public DateTime? DueDate { get; set; }
+
     public WeddingTaskStatus Status { get; set; } = WeddingTaskStatus.ToBuy;
 }
 
@@ -47,6 +49,8 @@ public class UpdateTaskRequest
     public ResponsibleParty ResponsibleParty { get; set; }
 
     public string? ProductUrl { get; set; }
+
+    public DateTime? DueDate { get; set; }
 
     public WeddingTaskStatus Status { get; set; }
 }

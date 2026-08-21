@@ -24,6 +24,9 @@ public class WeddingTask
 
     public string? ProductUrl { get; set; }
 
+    /// <summary>Kapora/taksit/son ödeme gibi tarihe bağlı bir vadesi varsa.</summary>
+    public DateTime? DueDate { get; set; }
+
     public WeddingTaskStatus Status { get; set; } = WeddingTaskStatus.ToBuy;
 
     public DateTime? CompletedAt { get; set; }

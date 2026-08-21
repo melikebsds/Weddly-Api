@@ -26,6 +26,8 @@ public class TaskResponse
 
     public string? ProductUrl { get; set; }
 
+    public DateTime? DueDate { get; set; }
+
     public WeddingTaskStatus Status { get; set; }
 
     public DateTime? CompletedAt { get; set; }

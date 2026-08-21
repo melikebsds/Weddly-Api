@@ -55,6 +55,7 @@ public class TaskService : ITaskService
             AssignedUserId = request.AssignedUserId,
             ResponsibleParty = request.ResponsibleParty,
             ProductUrl = request.ProductUrl,
+            DueDate = request.DueDate,
             Status = request.Status,
             CompletedAt = request.Status == WeddingTaskStatus.Bought ? now : null,
             CreatedAt = now,
@@ -88,6 +89,7 @@ public class TaskService : ITaskService
         task.AssignedUserId = request.AssignedUserId;
         task.ResponsibleParty = request.ResponsibleParty;
         task.ProductUrl = request.ProductUrl;
+        task.DueDate = request.DueDate;
 
         if (task.Status != request.Status)
         {
@@ -148,6 +150,7 @@ public class TaskService : ITaskService
         AssignedUserId = task.AssignedUserId,
         ResponsibleParty = task.ResponsibleParty,
         ProductUrl = task.ProductUrl,
+        DueDate = task.DueDate,
         Status = task.Status,
         CompletedAt = task.CompletedAt,
         CreatedAt = task.CreatedAt,

@@ -57,7 +57,7 @@ public class WeddingSpaceService : IWeddingSpaceService
             _db.Categories.Add(category);
         }
 
-        foreach (var (categoryName, title, estimatedPrice) in DefaultWeddingData.SampleTasks)
+        foreach (var (categoryName, subCategory, title, estimatedPrice) in DefaultWeddingData.SampleTasks)
         {
             var category = categoriesByName[categoryName];
             _db.WeddingTasks.Add(new WeddingTask
@@ -66,6 +66,7 @@ public class WeddingSpaceService : IWeddingSpaceService
                 WeddingSpaceId = space.Id,
                 CategoryId = category.Id,
                 Title = title,
+                SubCategory = subCategory,
                 EstimatedPrice = estimatedPrice,
                 CreatedAt = now,
             });

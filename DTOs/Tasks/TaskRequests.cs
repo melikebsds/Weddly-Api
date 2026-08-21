@@ -8,6 +8,8 @@ public class CreateTaskRequest
     [Required(ErrorMessage = "Görev adı boş olamaz")]
     public string Title { get; set; } = string.Empty;
 
+    public string? SubCategory { get; set; }
+
     public string? Description { get; set; }
 
     [Range(0, double.MaxValue, ErrorMessage = "Fiyat negatif olamaz")]
@@ -25,6 +27,8 @@ public class UpdateTaskRequest
 {
     [Required(ErrorMessage = "Görev adı boş olamaz")]
     public string Title { get; set; } = string.Empty;
+
+    public string? SubCategory { get; set; }
 
     public string? Description { get; set; }
 

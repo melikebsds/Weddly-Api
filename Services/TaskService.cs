@@ -48,6 +48,7 @@ public class TaskService : ITaskService
             WeddingSpaceId = category.WeddingSpaceId,
             CategoryId = categoryId,
             Title = request.Title.Trim(),
+            SubCategory = request.SubCategory,
             Description = request.Description,
             EstimatedPrice = request.EstimatedPrice,
             ActualPrice = request.ActualPrice,
@@ -78,6 +79,7 @@ public class TaskService : ITaskService
         var now = DateTime.UtcNow;
 
         task.Title = request.Title.Trim();
+        task.SubCategory = request.SubCategory;
         task.Description = request.Description;
         task.EstimatedPrice = request.EstimatedPrice;
         task.ActualPrice = request.ActualPrice;
@@ -135,6 +137,7 @@ public class TaskService : ITaskService
         WeddingSpaceId = task.WeddingSpaceId,
         CategoryId = task.CategoryId,
         Title = task.Title,
+        SubCategory = task.SubCategory,
         Description = task.Description,
         EstimatedPrice = task.EstimatedPrice,
         ActualPrice = task.ActualPrice,

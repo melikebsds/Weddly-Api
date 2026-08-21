@@ -10,6 +10,8 @@ public class WeddingTask
 
     public string Title { get; set; } = string.Empty;
 
+    public string? SubCategory { get; set; }
+
     public string? Description { get; set; }
 
     public decimal? EstimatedPrice { get; set; }
